@@ -75,3 +75,4 @@ Add CNAME record:
 - Value: YOUR_USERNAME.github.io
 - TTL: 3600
 test
+test2
