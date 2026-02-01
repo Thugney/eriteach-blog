@@ -1,7 +1,7 @@
 ---
 title: "Auto-Update Firefox with Intune Proactive Remediation"
 date: 2026-02-01
-draft: true
+draft: false
 tags: ["intune", "proactive-remediation", "powershell", "firefox"]
 categories: ["How-To"]
 summary: "Use Intune proactive remediation to keep Firefox updated by checking versions and auto-installing updates."

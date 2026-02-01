@@ -1,7 +1,7 @@
 ---
 title: "Upload Custom ADMX Templates to Intune"
 date: 2026-02-01
-draft: true
+draft: false
 tags: ["intune", "admx", "how-to", "firefox", "zoom"]
 categories: ["How-To"]
 summary: "How to import custom ADMX/ADML files into Intune for third-party apps like Firefox and Zoom."

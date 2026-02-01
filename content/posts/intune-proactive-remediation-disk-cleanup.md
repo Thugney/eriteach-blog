@@ -1,7 +1,7 @@
 ---
 title: "Automatic Disk Cleanup with Intune Proactive Remediation"
 date: 2026-02-01
-draft: true
+draft: false
 tags: ["intune", "powershell", "proactive-remediation"]
 categories: ["How-To"]
 summary: "Silent disk cleanup for devices with limited SSD space - no user interaction required."

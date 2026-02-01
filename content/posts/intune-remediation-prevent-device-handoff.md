@@ -1,7 +1,7 @@
 ---
 title: "Stop Unauthorized Device Handoffs with Intune Remediations"
 date: 2026-02-01
-draft: true
+draft: false
 tags: ["intune", "powershell", "compliance"]
 categories: ["How-To"]
 summary: "Prevent users from taking over colleagues' devices by restricting login to the Intune primary user only."

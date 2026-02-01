@@ -1,7 +1,7 @@
 ---
 title: "Keep Edge Updated with Intune Auto-Restart Policy"
 date: 2026-02-01
-draft: true
+draft: false
 tags: ["intune", "microsoft-edge", "how-to"]
 categories: ["How-To"]
 summary: "Configure Intune to auto-update and restart Microsoft Edge with user-friendly notifications."

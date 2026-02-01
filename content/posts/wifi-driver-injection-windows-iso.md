@@ -1,7 +1,7 @@
 ---
 title: "Inject WiFi Drivers into Windows ISO for Smoother Resets"
 date: 2026-02-01
-draft: true
+draft: false
 tags: ["intune", "powershell", "autopilot", "deployment"]
 categories: ["How-To"]
 summary: "No WiFi during Windows setup after reset? Inject drivers into the ISO so school staff can handle resets without IT."
