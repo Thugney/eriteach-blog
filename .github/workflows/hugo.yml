@@ -1,63 +1,66 @@
-baseURL = "https://blog.eriteach.com/"
-languageCode = "en-us"
-title = "Eriteach"
-theme = "papermod"
+name: Deploy Hugo site to GitHub Pages
 
-[params]
-  author = "Eriteach"
-  description = "Practical guides on Intune, Autopilot, Entra ID, Defender, and Purview"
-  ShowReadingTime = true
-  ShowShareButtons = false
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = false
-  ShowCodeCopyButtons = true
-  defaultTheme = "auto"
-  disableThemeToggle = false
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
 
-  [params.homeInfoParams]
-    Title = "Microsoft Cloud Tech"
-    Content = "Practical solutions for Intune, Autopilot, Entra ID, Defender, and Purview"
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://linkedin.com/in/eriteach"
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
-  [[params.socialIcons]]
-    name = "x"
-    url = "https://x.com/eriteach"
+defaults:
+  run:
+    shell: bash
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/Thugney"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.146.0
+    steps:
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
-  [[menu.main]]
-    name = "Archive"
-    url = "/archives/"
-    weight = 3
-  [[menu.main]]
-    name = "About"
-    url = "/about/"
-    weight = 4
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    lineNos = false
-    style = "monokai"
-    guessSyntax = true
-    noClasses = false
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true
+      - name: Build with Hugo
+        env:
+          HUGO_ENVIRONMENT: production
+          HUGO_ENV: production
+        run: |
+          hugo \
+            --gc \
+            --minify \
+            --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,60 +1,65 @@
 baseURL = "https://blog.eriteach.com/"
 languageCode = "en-us"
-title = "Eriteach - Microsoft Cloud Tech Blog"
+title = "Eriteach | Microsoft Cloud Tech"
+
 theme = "papermod"
 
 [params]
-  author = "Eriteach"
-  description = "Practical guides on Intune, Autopilot, Entra ID, Defender, and Purview"
-  ShowReadingTime = true
-  ShowShareButtons = true
-  ShowPostNavLinks = true
-  ShowBreadCrumbs = true
-  ShowCodeCopyButtons = true
-  defaultTheme = "auto"
+author = "Robel M."
+description = "Practical guides on Intune, Autopilot, Entra ID, Defender, and Purview"
+ShowReadingTime = true
+ShowShareButtons = true
+ShowPostNavLinks = true
+ShowBreadCrumbs = false
+ShowCodeCopyButtons = true
+defaultTheme = "auto"
+disableThemeToggle = false
 
-  [params.homeInfoParams]
-    Title = "Microsoft Cloud Tech Blog"
-    Content = "Practical solutions for Intune, Autopilot, Entra ID, Defender, and Purview"
+[params.homeInfoParams]
+Content = "Practical solutions for Intune, Autopilot, Entra ID, Defender, and Purview"
 
-  [[params.socialIcons]]
-    name = "linkedin"
-    url = "https://linkedin.com/in/eriteach"
-
-  [[params.socialIcons]]
-    name = "x"
-    url = "https://x.com/eriteach"
 
 [[params.socialIcons]]
-  name = "github"
-  url = "https://github.com/Thugney"
+name = "linkedin"
+url = "https://linkedin.com/in/eriteach"
 
-[menu]
-  [[menu.main]]
-    name = "Home"
-    url = "/"
-    weight = 1
+[[params.socialIcons]]
+name = "x"
+url = "https://x.com/eriteach"
 
-  [[menu.main]]
-    name = "Tags"
-    url = "/tags/"
-    weight = 2
-  [[menu.main]]
-    name = "Archive"
-    url = "/archives/"
-    weight = 3
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/Thugney"
 
-  [[menu.main]]
-  name = "About"
-  url = "/about/"
-  weight = 4
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
+[[menu.main]]
+name = "Tags"
+url = "/tags/"
+weight = 2
+
+[[menu.main]]
+name = "Archive"
+url = "/archives/"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about/"
+weight = 4
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+home = ["HTML", "RSS", "JSON"]
 
-[markup]
-  [markup.highlight]
-    codeFences = true
-    lineNos = false
-    style = "monokai"
+[markup.highlight]
+codeFences = true
+lineNos = true
+style = "monokai"
+guessSyntax = true
+noClasses = true
+
+[markup.goldmark.renderer]
+unsafe = true
