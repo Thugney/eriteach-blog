@@ -34,6 +34,7 @@ theme = "papermod"
     name = "Home"
     url = "/"
     weight = 1
+
   [[menu.main]]
     name = "Tags"
     url = "/tags/"
@@ -42,6 +43,12 @@ theme = "papermod"
     name = "Archive"
     url = "/archives/"
     weight = 3
+
+  [[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 4
+
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

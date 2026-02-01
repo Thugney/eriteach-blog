@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(eriteach-blog)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

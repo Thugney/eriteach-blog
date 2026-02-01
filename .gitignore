@@ -1,15 +1,34 @@
-# Hugo
+# Hugo build output - generated files, rebuild anytime
 public/
 resources/_gen/
 .hugo_build.lock
 
-# OS
+# OS files - system junk
 .DS_Store
 Thumbs.db
+Desktop.ini
 
-# IDE
+# IDE settings - personal preferences, not project config
 .vscode/
 .idea/
+*.swp
+*.swo
 
-# Node (if using npm for tooling)
+# Node - if you add npm tooling later
 node_modules/
+
+# Logs
+*.log
+
+# Hugo theme dev - if you modify themes locally
+themes/papermod/.git/
+
+# Optional: Environment files if you add any
+# .env
+# .env.local
+
+# Optional: Keep drafts private (remove # if you want)
+# content/drafts/
+
+# Optional: Local Hugo config overrides
+# config.local.toml
