@@ -1,16 +1,82 @@
 baseURL = "https://blog.eriteach.com/"
-languageCode = "en-us"
 title = "Eriteach | Microsoft Cloud Tech"
 theme = "papermod"
+
+# Multilingual
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    languageCode = "en"
+    weight = 1
+    [languages.en.params]
+      description = "Practical solutions for Intune, Autopilot, Entra ID, Defender, and Purview"
+    [[languages.en.menu.main]]
+      name = "Home"
+      url = "/"
+      weight = 1
+    [[languages.en.menu.main]]
+      name = "Categories"
+      url = "/categories/"
+      weight = 2
+    [[languages.en.menu.main]]
+      name = "Tags"
+      url = "/tags/"
+      weight = 3
+    [[languages.en.menu.main]]
+      name = "Archive"
+      url = "/archives/"
+      weight = 4
+    [[languages.en.menu.main]]
+      name = "Search"
+      url = "/search/"
+      weight = 5
+    [[languages.en.menu.main]]
+      name = "About"
+      url = "/about/"
+      weight = 6
+
+  [languages.no]
+    languageName = "Norsk"
+    languageCode = "no"
+    weight = 2
+    [languages.no.params]
+      description = "Praktiske løsninger for Intune, Autopilot, Entra ID, Defender og Purview"
+    [[languages.no.menu.main]]
+      name = "Hjem"
+      url = "/no/"
+      weight = 1
+    [[languages.no.menu.main]]
+      name = "Kategorier"
+      url = "/no/categories/"
+      weight = 2
+    [[languages.no.menu.main]]
+      name = "Emner"
+      url = "/no/tags/"
+      weight = 3
+    [[languages.no.menu.main]]
+      name = "Arkiv"
+      url = "/no/archives/"
+      weight = 4
+    [[languages.no.menu.main]]
+      name = "Søk"
+      url = "/no/search/"
+      weight = 5
+    [[languages.no.menu.main]]
+      name = "Om"
+      url = "/no/about/"
+      weight = 6
 
 [pagination]
 pagerSize = 5
 
 [params]
 author = "Robel M."
-description = "Practical solutions for Intune, Autopilot, Entra ID, Defender, and Purview"
+env = "production"
 ShowReadingTime = true
-ShowShareButtons = false
+ShowShareButtons = true
 ShowPostNavLinks = true
 ShowBreadCrumbs = true
 ShowCodeCopyButtons = true
@@ -18,7 +84,19 @@ defaultTheme = "auto"
 disableThemeToggle = false
 ShowAllPagesInArchive = true
 ShowFullTextinRSS = true
+displayFullLangName = true
 
+# SEO - Default image for social sharing
+images = ["og-default.png"]
+
+# SEO - Site verification (add your codes here)
+[params.analytics.google]
+# SiteVerificationTag = "your-google-verification-code"
+
+[params.analytics.bing]
+# SiteVerificationTag = "your-bing-verification-code"
+
+# Search
 [params.fuseOpts]
 isCaseSensitive = false
 shouldSort = true
@@ -28,39 +106,11 @@ threshold = 0.4
 minMatchCharLength = 0
 keys = ["title", "permalink", "summary", "content", "tags"]
 
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
-name = "Categories"
-url = "/categories/"
-weight = 2
-
-[[menu.main]]
-name = "Tags"
-url = "/tags/"
-weight = 3
-
-[[menu.main]]
-name = "Archive"
-url = "/archives/"
-weight = 4
-
-[[menu.main]]
-name = "Search"
-url = "/search/"
-weight = 5
-
-[[menu.main]]
-name = "About"
-url = "/about/"
-weight = 6
-
+# Outputs
 [outputs]
 home = ["HTML", "RSS", "JSON"]
 
+# Syntax highlighting
 [markup.highlight]
 codeFences = true
 lineNos = false

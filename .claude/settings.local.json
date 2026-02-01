@@ -7,7 +7,10 @@
       "Bash(git push:*)",
       "Bash(git clone:*)",
       "Bash(ls:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "WebFetch(domain:eriteach.com)",
+      "Bash(hugo config:*)",
+      "Bash(hugo list:*)"
     ]
   }
 }

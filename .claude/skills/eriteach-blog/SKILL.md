@@ -7,6 +7,16 @@ description: Write technical blog posts for eriteach.com about Microsoft cloud t
 
 Write practical, scenario-based blog posts for blog.eriteach.com.
 
+## Author Context
+
+**Robel Mehari** - Microsoft 365 Security Specialist at Modum Kommune, Norway
+- Manages 4,000+ users and 6,000+ endpoints
+- Originally from Eritrea, started IT in 2009
+- Worked as social worker with refugee youth before returning to IT
+- IT apprentice 2021-2024, now full-time M365 security
+- Runs Eriteach YouTube channel (20,000+ subscribers)
+- Works in kommune (municipality) environment with multiple schools
+
 ## Voice & Style
 
 - **First person** - Use "I" and "we" - these are the author's real experiences and solutions. "I ran into this problem", "We had devices that...", "Then it hit me..."
@@ -15,7 +25,7 @@ Write practical, scenario-based blog posts for blog.eriteach.com.
 - **Real-world framing** - "We kept running into this issue..." not "When implementing device enrollment strategies..."
 - **Not verbose** - Say it once, say it clearly, move on
 - **No guru tone** - No "Let's dive in", "In this blog post we will", "As you may know"
-- **Norwegian context** - Author works in Norway, Kommune (municipality) environment with multiple schools
+- **Norwegian context** - Municipality environment, multiple schools, student devices, school consultants handle local IT
 
 ## Blog Focus
 
@@ -231,6 +241,12 @@ Save to: `J:\Projects\eriteach-blog\content\drafts\`
 Filename: `kebab-case-describing-topic.md`
 
 Example: `autopilot-esp-timeout-win32-detection.md`
+
+**IMPORTANT: Always create both English AND Norwegian versions:**
+- `my-post.md` - English version
+- `my-post.no.md` - Norwegian version
+
+Both files go in the same folder. Hugo links them automatically.
 
 ## Workflow
 
