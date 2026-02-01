@@ -3,7 +3,7 @@ title = "Eriteach | Microsoft Cloud Tech"
 theme = "papermod"
 
 # Multilingual
-defaultContentLanguage = "en"
+defaultContentLanguage = "no"
 defaultContentLanguageInSubdir = false
 
 [languages]
