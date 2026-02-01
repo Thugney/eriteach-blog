@@ -15,6 +15,20 @@ ShowCodeCopyButtons = true
 defaultTheme = "auto"
 disableThemeToggle = false
 
+[params.assets]
+favicon = "/favicon.png"
+favicon16x16 = "/favicon.png"
+favicon32x32 = "/favicon.png"
+
+[params.fuseOpts]
+isCaseSensitive = false
+shouldSort = true
+location = 0
+distance = 1000
+threshold = 0.4
+minMatchCharLength = 0
+keys = ["title", "permalink", "summary", "content"]
+
 [params.homeInfoParams]
 Content = "Practical solutions for Intune, Autopilot, Entra ID, Defender, and Purview"
 
@@ -50,6 +64,10 @@ weight = 3
 name = "About"
 url = "/about/"
 weight = 4
+[[menu.main]]
+name = "Search"
+url = "/search/"
+weight = 5
 
 [outputs]
 home = ["HTML", "RSS", "JSON"]

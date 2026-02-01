@@ -5,6 +5,8 @@ url: "/about/"
 summary: "About Eriteach"
 ---
 
+<img src="/images/robel-mehari.jpg" alt="Robel Mehari" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 1rem auto;">
+
 ## Hi, I'm Robel
 
 I work with Microsoft cloud technologies at Modum Kommune in Norway.

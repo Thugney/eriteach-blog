@@ -9,12 +9,13 @@ Write practical, scenario-based blog posts for blog.eriteach.com.
 
 ## Voice & Style
 
+- **First person** - Use "I" and "we" - these are the author's real experiences and solutions. "I ran into this problem", "We had devices that...", "Then it hit me..."
 - **Simple language** - No jargon. If you must use acronyms, explain them in plain words
 - **Short sentences** - Get to the point. No fluff
-- **Real-world framing** - "You're enrolling a new laptop and it gets stuck..." not "When implementing device enrollment strategies..."
+- **Real-world framing** - "We kept running into this issue..." not "When implementing device enrollment strategies..."
 - **Not verbose** - Say it once, say it clearly, move on
 - **No guru tone** - No "Let's dive in", "In this blog post we will", "As you may know"
-- **Norwegian context** - Author works in Norway, Kommune environment
+- **Norwegian context** - Author works in Norway, Kommune (municipality) environment with multiple schools
 
 ## Blog Focus
 
@@ -103,6 +104,18 @@ ALWAYS use proper markdown code fences with language specified:
 
 ```powershell
 Get-MgDevice -Filter "displayName eq 'PC001'"
+<#
+.SYNOPSIS
+Avinstallerer Kodiak selvbetjeningsprogram.
+
+.DESCRIPTION
+Fjerner C:\Kodiak-katalogen, snarveier i Startmeny og skrivebordet.
+
+.NOTES
+Author: Eriteach
+Version: 1.0
+Intune Run Context: System
+#>
 ```
 
 ```json
@@ -112,6 +125,86 @@ Get-MgDevice -Filter "displayName eq 'PC001'"
 ```
 
 Never paste raw code without fences. Never use inline code for multi-line scripts.
+
+## GitHub Scripts Repository
+
+Full scripts live in: `https://github.com/Thugney/eriteach-scripts.git`
+
+### Folder Structure
+
+```
+eriteach-scripts/
+├── README.md
+├── intune/
+│   └── remediations/      # Proactive remediation scripts
+├── autopilot/             # Autopilot-related scripts
+└── graph/                 # Graph API scripts
+```
+
+### Adding Scripts to GitHub
+
+When a blog post includes scripts, push the full versions to GitHub:
+
+1. Clone the repo to temp:
+   ```bash
+   git clone https://github.com/Thugney/eriteach-scripts.git "$TEMP/eriteach-scripts-check"
+   ```
+
+2. Create the script file in the appropriate folder with proper header:
+   ```powershell
+   <#
+   .SYNOPSIS
+   Short description of what the script does.
+
+   .DESCRIPTION
+   Detailed explanation of how it works.
+
+   .NOTES
+   Author: Eriteach
+   Version: 1.0
+   Intune Run Context: System | User
+   #>
+   ```
+
+3. Update README.md with the new script in the table
+
+4. Commit and push:
+   ```bash
+   cd "$TEMP/eriteach-scripts-check"
+   git add .
+   git commit -m "Add script-name for purpose"
+   git push
+   ```
+
+### Script Header Format
+
+Every script MUST have this header:
+
+```powershell
+<#
+.SYNOPSIS
+One line - what it does.
+
+.DESCRIPTION
+How it works. Key logic explained.
+
+.NOTES
+Author: Eriteach
+Version: 1.0
+Intune Run Context: System | User
+#>
+```
+
+### Linking in Blog Posts
+
+In blog posts, show a snippet with key logic, then link to full script:
+
+```powershell
+# Key logic here (condensed)
+$response = Invoke-RestMethod -Uri "https://api.example.com"
+
+# Full script: https://github.com/Thugney/eriteach-scripts/blob/main/folder/script-name.ps1
+```
 
 ## Length Guide
 
@@ -148,12 +241,23 @@ Example: `autopilot-esp-timeout-win32-detection.md`
    - What did you try first?
 3. Write post in user's voice (simple, direct, no fluff)
 4. Save to drafts folder
-5. Mention if a script should be added to GitHub repo
+5. If post includes scripts:
+   - Clone eriteach-scripts repo to temp
+   - Create full script files with proper headers
+   - Update repo README with new scripts
+   - Commit and push to GitHub
+   - Ensure blog post links to the GitHub scripts
 
 ## Example - What NOT to Write
 
 ❌ "In this comprehensive guide, we will explore the intricacies of Windows Autopilot Enrollment Status Page timeout issues and dive deep into the resolution methodology."
 
+❌ "The school consultant has to physically deliver the laptop to the IT office." (third person, detached)
+
 ## Example - What TO Write
 
-✅ "Your laptop is stuck at 'Identifying' during Autopilot. It's been 30 minutes. Here's what's probably wrong and how to fix it."
+✅ "We kept running into this: a student downloads something sketchy, Defender flags the device. Now it needs a reset."
+
+✅ "Then it hit me - what if I inject the drivers directly into the ISO?"
+
+✅ "Our school consultants can now handle this themselves. No more delivering laptops to IT."
