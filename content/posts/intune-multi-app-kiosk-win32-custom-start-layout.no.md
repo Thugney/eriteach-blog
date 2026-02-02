@@ -1,7 +1,7 @@
 ---
 title: "Sett opp en multi-app kiosk med en tilpasset Win32-app i Intune"
 date: 2026-02-02
-draft: false
+draft: true
 tags: ["intune", "kiosk", "windows-11", "win32-app"]
 categories: ["How-To"]
 summary: "Konfigurer en Windows multi-app kiosk med en tilpasset Win32-applikasjon og tilpasset Startmeny-layout - ikke bare en nettleser."
@@ -9,14 +9,9 @@ summary: "Konfigurer en Windows multi-app kiosk med en tilpasset Win32-applikasj
 
 ## Problemet
 
-Vi trengte en dedikert kiosk for biblioteksreservasjoner. Ikke en enkel nettleser-kiosk som peker til en URL - dette krevde en full Win32-applikasjon kalt Kodiak som måtte:
+Vi trengte en kiosk for biblioteksreservasjoner. Ikke en nettleser som peker til en URL - en faktisk Win32-app kalt Kodiak som trenger skrivertilgang.
 
-- Installeres på enheten
-- Ha tilgang til en lokal skriver
-- Kjøre i en låst kioskmodus
-- Vise kun appen på en tilpasset Startmeny
-
-De fleste kiosk-guider dekker nettleserbaserte oppsett. Dette var annerledes.
+Alle kiosk-guider jeg fant handlet om nettleser-kiosker. Dette trengte noe annet.
 
 ## Løsningen
 

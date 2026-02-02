@@ -9,13 +9,13 @@ summary: "Rydd opp i uautoriserte Firefox-installasjoner på tvers av organisasj
 
 ## Problemet
 
-Vi gjorde Edge til standard nettleser. Før den policyen kunne brukerne installere hva de ville. Nå hadde jeg et rot å rydde opp i.
+Før vi standardiserte på Edge kunne brukerne laste ned hvilken nettleser de ville. Nå hadde vi Firefox overalt.
 
-Jeg åpnet Microsoft Defender sin programvareoversikt og så dette:
+Jeg sjekket Defender sin programvareoversikt:
 
 ![Defender viser 800+ enheter med ulike Firefox-versjoner](/images/posts/defender-firefox-inventory.png)
 
-800+ enheter med Firefox. 19 forskjellige versjoner. Noen med kjente sårbarheter. Å avinstallere manuelt fra hver enhet var ikke aktuelt.
+800+ enheter. 19 versjoner. Noen med sårbarheter. Ikke aktuelt å ta hver enhet manuelt.
 
 ## Løsningen
 

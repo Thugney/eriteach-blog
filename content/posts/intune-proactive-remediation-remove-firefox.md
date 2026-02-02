@@ -9,13 +9,13 @@ summary: "Clean up unauthorized Firefox installations across your organization u
 
 ## The Problem
 
-We made Edge our standard browser. Before that policy, users could install whatever they wanted. Now I had a mess to clean up.
+Before we standardized on Edge, users could download any browser they wanted. Now we had Firefox everywhere.
 
-I opened Microsoft Defender's software inventory and saw this:
+I checked Defender's software inventory:
 
 ![Defender showing 800+ devices with various Firefox versions](/images/posts/defender-firefox-inventory.png)
 
-800+ devices running Firefox. 19 different versions. Some with known vulnerabilities. Manually uninstalling from each device wasn't going to work.
+800+ devices. 19 versions. Some with vulnerabilities. No way I'm touching each one manually.
 
 ## The Solution
 
@@ -25,7 +25,7 @@ Intune Proactive Remediation with two scripts:
 
 ## Detection Script
 
-The detection script checks three locations where Firefox can hide:
+Firefox can hide in a few places:
 
 1. **Registry** - Both 64-bit and 32-bit uninstall keys, plus per-user installs
 2. **Program Files** - Standard install locations
@@ -59,7 +59,7 @@ if ($findings.Count -gt 0) { exit 1 } else { exit 0 }
 
 ## Remediation Script
 
-The remediation does a thorough cleanup:
+The remediation nukes everything:
 
 1. **Stop all Firefox processes** - Including helper processes like plugin-container and updater
 2. **Uninstall via registry** - Uses the uninstall string from registry (handles both EXE and MSI installs)

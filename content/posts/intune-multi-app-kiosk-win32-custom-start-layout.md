@@ -1,7 +1,7 @@
 ---
 title: "Set Up a Multi-App Kiosk with a Custom Win32 App in Intune"
 date: 2026-02-02
-draft: false
+draft: true
 tags: ["intune", "kiosk", "windows-11", "win32-app"]
 categories: ["How-To"]
 summary: "Configure a Windows multi-app kiosk with a custom Win32 application and custom Start menu layout - not just a browser."
@@ -9,14 +9,9 @@ summary: "Configure a Windows multi-app kiosk with a custom Win32 application an
 
 ## The Problem
 
-We needed a dedicated kiosk for library resource booking. Not a simple browser kiosk pointing to a URL - this required a full Win32 application called Kodiak that needed to:
+We needed a kiosk for library booking. Not a browser pointing to a URL - an actual Win32 app called Kodiak that needs printer access.
 
-- Be installed on the device
-- Access a local printer
-- Run in a locked-down kiosk mode
-- Show only the app on a custom Start menu
-
-Most kiosk guides cover browser-based setups. This was different.
+Every kiosk guide I found was about browser kiosks. This needed something else.
 
 ## The Solution
 
@@ -70,7 +65,7 @@ The app appears in the Applications list with tile size options.
 
 ## Create the Start Menu Layout XML
 
-This is where it gets specific. You need an XML file that pins your app to the Start menu.
+You need an XML file to pin the app to Start.
 
 ![Start menu layout XML configuration](/kodiak/image.png)
 
@@ -114,7 +109,7 @@ Replace `YOUR-APP-AUMID-HERE` with your app's actual AUMID.
 2. Add the device group containing your kiosk devices
 3. Review and create
 
-The device will reboot and enter kiosk mode with auto-logon. Only the Start menu with your pinned app is accessible.
+Device reboots, auto-logs in, and you only see the Start menu with Kodiak.
 
 ## What to Watch Out For
 
