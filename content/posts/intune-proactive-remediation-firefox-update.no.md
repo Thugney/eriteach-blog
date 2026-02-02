@@ -97,7 +97,7 @@ Start-Process -FilePath "$env:TEMP\FirefoxSetup.exe" -ArgumentList "/S" -Wait
 
 ### 1. Opprett Remediation
 
-1. Gå til **Intune admin center** → **Devices** → **Remediations**
+1. Gå til **Intune admin center** > **Devices** > [**Scripts and remediations**](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/intents)
 2. Klikk **Create script package**
 3. Navngi det "Firefox Auto-Update"
 
@@ -119,7 +119,7 @@ Start-Process -FilePath "$env:TEMP\FirefoxSetup.exe" -ArgumentList "/S" -Wait
 
 Etter distribusjon, sjekk resultater i:
 
-**Devices** → **Remediations** → **Firefox Auto-Update** → **Device status**
+**Devices** > **Scripts and remediations** > **Firefox Auto-Update** > **Device status**
 
 Du vil se:
 - Enheter hvor Firefox allerede var oppdatert
@@ -147,6 +147,7 @@ Bruk proactive remediation når:
 
 ## Relaterte lenker
 
+- [Fjern Firefox fra alle enheter](/posts/intune-proactive-remediation-remove-firefox/) - Hvis du har standardisert på Edge og trenger å rydde opp Firefox
 - [Intune Remediations overview](https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations)
 - [Firefox enterprise deployment](https://support.mozilla.org/en-US/kb/deploy-firefox-msi-installers)
 - [Last opp ADMX-maler til Intune](/no/posts/intune-upload-admx-templates/) - Den enklere tilnærmingen

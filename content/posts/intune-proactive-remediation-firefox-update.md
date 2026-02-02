@@ -97,7 +97,7 @@ Start-Process -FilePath "$env:TEMP\FirefoxSetup.exe" -ArgumentList "/S" -Wait
 
 ### 1. Create the Remediation
 
-1. Go to **Intune admin center** → **Devices** → **Remediations**
+1. Go to **Intune admin center** > **Devices** > [**Scripts and remediations**](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/intents)
 2. Click **Create script package**
 3. Name it "Firefox Auto-Update"
 
@@ -119,7 +119,7 @@ Start-Process -FilePath "$env:TEMP\FirefoxSetup.exe" -ArgumentList "/S" -Wait
 
 After deployment, check results in:
 
-**Devices** → **Remediations** → **Firefox Auto-Update** → **Device status**
+**Devices** > **Scripts and remediations** > **Firefox Auto-Update** > **Device status**
 
 You'll see:
 - Devices where Firefox was already up to date
@@ -147,6 +147,7 @@ Use proactive remediation when:
 
 ## Related Links
 
+- [Remove Firefox from All Devices](/posts/intune-proactive-remediation-remove-firefox/) - If you've standardized on Edge and need to clean up Firefox
 - [Intune Remediations overview](https://learn.microsoft.com/en-us/mem/intune/fundamentals/remediations)
 - [Firefox enterprise deployment](https://support.mozilla.org/en-US/kb/deploy-firefox-msi-installers)
 - [Upload ADMX templates to Intune](/posts/intune-upload-admx-templates/) - The simpler approach

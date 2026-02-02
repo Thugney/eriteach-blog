@@ -105,7 +105,8 @@ Optional section. Include if there are common mistakes or things that broke alon
 ## Related Links
 
 - Link to Microsoft docs if helpful
-- Link to related posts
+- Link to related internal posts (cross-linking improves SEO and helps readers discover content)
+- After publishing a new post, check existing related posts and add links to the new post
 ```
 
 ## Code Block Rules
@@ -215,6 +216,35 @@ $response = Invoke-RestMethod -Uri "https://api.example.com"
 
 # Full script: https://github.com/Thugney/eriteach-scripts/blob/main/folder/script-name.ps1
 ```
+
+## Intune Deep Links
+
+When referencing Intune admin center locations, use deep links to help readers navigate directly:
+
+| Location | Deep Link |
+|----------|-----------|
+| Scripts and remediations | `https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/intents` |
+| Devices overview | `https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/overview` |
+| Windows enrollment | `https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/~/enrollment` |
+| Configuration profiles | `https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/configuration` |
+| Compliance policies | `https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesComplianceMenu/~/policies` |
+| Apps | `https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/AppsMenu/~/windowsApps` |
+
+Example usage in markdown:
+```markdown
+1. Go to **Intune admin center** > **Devices** > [**Scripts and remediations**](https://intune.microsoft.com/#view/Microsoft_Intune_DeviceSettings/DevicesMenu/~/intents)
+```
+
+## Internal Linking Best Practices
+
+**Cross-link related posts** - Internal linking helps readers discover more content and improves SEO.
+
+When creating a new post:
+1. Add links to related existing posts in the "Related Links" section
+2. Check existing posts that cover related topics and add links back to the new post
+3. Use descriptive link text that explains what the linked post covers
+
+Example: If writing about "Remove Firefox", link to "Auto-Update Firefox" post and vice versa.
 
 ## Length Guide
 

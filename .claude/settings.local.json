@@ -11,7 +11,14 @@
       "WebFetch(domain:eriteach.com)",
       "Bash(hugo config:*)",
       "Bash(hugo list:*)",
-      "Bash(git status:*)"
+      "Bash(git status:*)",
+      "Bash(hugo:*)",
+      "mcp__browsermcp__browser_click",
+      "Bash(magick:*)",
+      "Bash(where:*)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)"
     ]
   }
 }
